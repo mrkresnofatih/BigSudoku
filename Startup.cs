@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using BigSudoku.Services;
 
 namespace BigSudoku
 {
@@ -28,6 +29,7 @@ namespace BigSudoku
         {
 
             services.AddControllers();
+            services.AddScoped<SdkCreatorService>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "BigSudoku", Version = "v1" });
