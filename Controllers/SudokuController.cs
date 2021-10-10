@@ -6,16 +6,16 @@ namespace BigSudoku.Controllers
     [Route("")]
     public class SudokuController    :   ControllerBase
     {
-        private SdkCreatorService _sdkCreatorService;
+        private readonly SdkCreatorService _sdkCreatorService;
         public SudokuController(SdkCreatorService sdkCreatorService)
         {
             _sdkCreatorService = sdkCreatorService;
         }
 
         [HttpGet("/")]
-        public string helloWorld()
+        public string HelloWorld()
         {
-            return _sdkCreatorService.buildSdkPuzzle();
+            return _sdkCreatorService.BuildSdkPuzzle();
         }
     }
 }
